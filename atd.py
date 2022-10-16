@@ -17,5 +17,7 @@ class AllThatDice:
     def displayGameOption(self):
         pass
 
+    def testFunction(self):
+        pass
     
         
