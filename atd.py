@@ -20,4 +20,6 @@ class AllThatDice:
     def testFunction(self):
         pass
     
+    def testFunction2(self):
+        print("Hello world")
         
