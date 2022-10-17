@@ -1,3 +1,14 @@
+#
+# File: filename.py
+# Descrition: A brief description of this Python module.
+# Author: Steve Jobs
+# Student ID: 12345678
+# Email ID: jobst007
+# This is my own work as defined by
+# the University's Academic Misconduct Policy.
+# 
+
+
 class Player:
     def __init__(self, name, chipBalance, numOfGamesPlayed, numOfGamesWon):
         self.__name = name
@@ -32,6 +43,9 @@ class Player:
     def getNumberOfGamesWon(self):
         """Returns the number of games won"""
         return self.__numOfGamesWon
+    
+    def getNumberOfGamesPlayed(self):
+        return self.__numOfGamesPlayed
 
 
 

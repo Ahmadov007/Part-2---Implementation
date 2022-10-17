@@ -1,3 +1,15 @@
+#
+# File: filename.py
+# Descrition: A brief description of this Python module.
+# Author: Steve Jobs
+# Student ID: 12345678
+# Email ID: jobst007
+# This is my own work as defined by
+# the University's Academic Misconduct Policy.
+# 
+
+
+
 class Game:
     def __init__(self, name, maxPlayer, minPlayer, playerList):
         self.__name = name
