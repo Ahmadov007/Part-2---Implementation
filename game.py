@@ -1,9 +1,9 @@
 class Game:
-    def __init__(self, name, maxPlayer, minPlayer):
+    def __init__(self, name, maxPlayer, minPlayer, playerList):
         self.__name = name
         self.__maximumPLayer = maxPlayer
         self.__minimumPLayer = minPlayer
-        self.__playerList = []
+        self.__playerList = playerList
 
     def findPLayer(self, name):
         pass
@@ -17,4 +17,29 @@ class Game:
     def play(self):
         pass
 
+
+class Odd_Or_Even(Game):
+    def __init__(self, playerList):
+        super().__init__("Odd Or Even", 1, 1, playerList)
     
+    def play(self):
+        pass
+
+
+class Maxi(Game):
+    def __init__(self, playerList):
+        super().__init__("Maxi", 5, 3, playerList)
+    
+    def play(self):
+        pass
+
+class Bunco(Game):
+    def __init__(self, playerList):
+        super().__init__("Bunco", 4, 2, playerList)
+    
+    def play(self):
+        pass
+      
+
+
+
