@@ -10,7 +10,7 @@ class Player:
         return self.__name
 
     def setName(self, name):
-        """Sets the player name"""
+        """Sets the player name using the name parameter"""
         self.__name = name
 
     def getChipBalance(self):
@@ -18,11 +18,11 @@ class Player:
         return self.__chipBalance
 
     def setChipBalnce(self, chipBalance):
-        """Sets the players chip balance"""
+        """Sets the players chip balance by chipBalance value"""
         self.__chipBalance = chipBalance
 
     def incrementGamesPlayed(self, num):
-        """Increment the number of games played by num digit"""
+        """Increment the number of games played by num value"""
         self.__numOfGamesPlayed += num
 
     def setNumberOfGamesWon(self, num):
