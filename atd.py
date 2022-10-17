@@ -37,12 +37,19 @@ class AllThatDice:
                 userChoice = self.displayGameOption()
 
                 if userChoice == "o":
-                    pass
+                    playerName = input("What is the name of player?\n> ")
+                    
+                    if self.findPlayer(playerName) == False:
+                        print("Sorry " + playerName + " does not exist.")
+                    else:
+                        print("Hey ")
+                    print(self.findPlayer(playerName, self.__registeredPlayers))
+
                 elif userChoice == "m":
                     pass
                 elif userChoice == "b":
                     pass
-                
+
             elif userInput == "q":
                 playingGame = False
 
@@ -98,9 +105,8 @@ class AllThatDice:
         return userInput
 
 
-    def findPlayer(self, name):
-        '''Finds a player using the name parameter'''
-        pass
+    
+
 
     def displayGameOption(self):
         '''Displays the game option'''
