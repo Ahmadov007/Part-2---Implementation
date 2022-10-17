@@ -7,8 +7,8 @@
 # This is my own work as defined by
 # the University's Academic Misconduct Policy.
 # 
-
-
+from validation import *
+import random
 
 class Game:
     def __init__(self, name, maxPlayer, minPlayer, playerList):
@@ -23,8 +23,15 @@ class Game:
     def chipBid(self):
         pass
 
-    def shifterValue(self, val):
-        pass
+    def shiftTheValue(self, shiftValue, randomNumberValue):
+        sumOfValue = shiftValue+randomNumberValue
+        resultValue = 0
+        if sumOfValue > 6:
+            resultValue = sumOfValue-6
+        elif sumOfValue <= 6:
+            resultValue = sumOfValue
+        
+        return resultValue
 
     def play(self):
         pass
@@ -35,7 +42,28 @@ class Odd_Or_Even(Game):
         super().__init__("Odd Or Even", 1, 1, playerList)
     
     def play(self):
-        pass
+        randomNmber = random.randint(1, 6)
+        validation = Validation()
+        playerName = input("What is the name of player?\n> ")
+        
+        if validation.findPlayer(playerName, self.__playerList) == False:
+            print("Sorry Player does not exist.")
+        else:
+            print("Hey " + playerName, + " Odd (o) or Even (e)?")
+            userInput = input("> ")
+
+            while userInput != "o" and userInput != "e":
+                print("Invalid choice.")
+                print("Odd (o) or Even (e)?")
+                userInput = input("> ")
+
+            print("How strong will you throw (0-5)?")
+            
+    
+  
+            
+
+
 
 
 class Maxi(Game):
@@ -52,6 +80,3 @@ class Bunco(Game):
     def play(self):
         pass
       
-
-
-
