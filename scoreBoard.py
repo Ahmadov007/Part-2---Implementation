@@ -26,5 +26,7 @@ class ScoreBoard:
             print("-"*59)
 
         print("="*59)
+    
+
 
 

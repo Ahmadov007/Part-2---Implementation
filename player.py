@@ -15,6 +15,8 @@ class Player:
         self.__chipBalance = chipBalance
         self.__numOfGamesPlayed = numOfGamesPlayed
         self.__numOfGamesWon = numOfGamesWon
+        self.__numOfBid = 0
+        self.__maxValue = 0
 
     def getName(self):
         """Returns the player name"""
@@ -31,6 +33,12 @@ class Player:
     def setChipBalnce(self, chipBalance):
         """Sets the players chip balance by chipBalance value"""
         self.__chipBalance = chipBalance
+    
+    def incrementChipBalance(self, chipBalance):
+        self.__chipBalance += chipBalance
+    
+    def decrementChipBalance(self, chipBalance):
+        self.__chipBalance -= chipBalance
 
     def incrementGamesPlayed(self, num):
         """Increment the number of games played by num value"""
@@ -47,6 +55,24 @@ class Player:
     def getNumberOfGamesPlayed(self):
         return self.__numOfGamesPlayed
 
+    def setBid(self, number):
+        self.__numOfBid = number
+    
+    def getBid(self):
+        return self.__numOfBid
+
+    def incrementBid(self, number):
+        self.__numOfBid += number
+    
+    def decrementBid(self, number):
+        self.__numOfBid -= number
+
+    def setMaxValue(self, theValue):
+        self.__maxValue = theValue
+
+    def getMaxValue(self):
+        return self.__maxValue
+    
 
 
 

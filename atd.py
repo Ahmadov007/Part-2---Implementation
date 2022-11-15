@@ -9,7 +9,8 @@
 # 
 from player import *
 from scoreBoard import *
-
+from validation import Validation
+from game import *
 
 
 class AllThatDice:
@@ -36,17 +37,17 @@ class AllThatDice:
             elif userInput == "p":
                 userChoice = self.displayGameOption()
 
+               
                 if userChoice == "o":
-                    playerName = input("What is the name of player?\n> ")
-                    
-                    if self.findPlayer(playerName) == False:
-                        print("Sorry " + playerName + " does not exist.")
-                    else:
-                        print("Hey ")
-                    print(self.findPlayer(playerName, self.__registeredPlayers))
+                    oddOrEvenGame = OddOrEven(self.__registeredPlayers)
+                    oddOrEvenGame.play()
 
                 elif userChoice == "m":
-                    pass
+                    maxiGame = Maxi(self.__registeredPlayers)
+                    maxiGame.play()
+                
+                        
+                        
                 elif userChoice == "b":
                     pass
 
@@ -98,7 +99,7 @@ class AllThatDice:
             print("What would you like to do?")
             print("  (r) register")
             print("  (s) show the leader board")
-            print("  (p) player a game")
+            print("  (p) clear player a game")
             print("  (q) quit")
             userInput = input("> ")
         
