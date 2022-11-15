@@ -1,9 +1,10 @@
 #
-# File: filename.py
-# Descrition: A brief description of this Python module.
-# Author: Steve Jobs
-# Student ID: 12345678
-# Email ID: jobst007
+# File: atd.py
+# Descrition: The atd.py file contains the allThatDice class 
+# as well as the run method where the game starts.  
+# Author: Ahmad Mohammadi
+# Student ID: 110120185
+# Email ID: mohaf002@mymail.unisa.edu.au
 # This is my own work as defined by
 # the University's Academic Misconduct Policy.
 # 
@@ -28,20 +29,28 @@ class AllThatDice:
         playingGame = True
 
         while playingGame == True:
+            #Displays the menu 
             userInput = self.displayMenu()
+            
+            # If user selects "r"
             if userInput == "r":
+                #Call the registerPlayer() function
                 self.registerPlayer()
+            # If user selects "s"
             elif userInput == "s":
                 scoreBoard = ScoreBoard(self.__registeredPlayers)
                 scoreBoard.displayScoreBoard()
+            # If user selects "p"
             elif userInput == "p":
+                # Displays and returns the users choice 
                 userChoice = self.displayGameOption()
 
-               
+                # If users choice is 'o' the execute the code 
                 if userChoice == "o":
                     oddOrEvenGame = OddOrEven(self.__registeredPlayers)
                     oddOrEvenGame.play()
 
+                
                 elif userChoice == "m":
                     maxiGame = Maxi(self.__registeredPlayers)
                     maxiGame.play()
@@ -94,15 +103,17 @@ class AllThatDice:
         print("  (q) quit")
         userInput = input("> ")
 
+        # Validates the users input 
         while userInput != "r" and userInput != "s" and userInput != "p" and userInput != "q":
             print("Invalid choice!")
             print("What would you like to do?")
             print("  (r) register")
             print("  (s) show the leader board")
-            print("  (p) clear player a game")
+            print("  (p) play a game")
             print("  (q) quit")
             userInput = input("> ")
         
+        # returns the users input 
         return userInput
 
 

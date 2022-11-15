@@ -1,9 +1,11 @@
 #
-# File: filename.py
-# Descrition: A brief description of this Python module.
-# Author: Steve Jobs
-# Student ID: 12345678
-# Email ID: jobst007
+# File: scoreBoard.py
+# Descrition: The scoreBoard.py file contains the ScoreBoard class which is 
+# used to display the scores and game statistics of the players resgistered
+# in the game. 
+# Author: Ahmad Mohammadi
+# Student ID: 110120185
+# Email ID: mohaf002@mymail.unisa.edu.au
 # This is my own work as defined by
 # the University's Academic Misconduct Policy.
 # 
@@ -13,19 +15,19 @@ class ScoreBoard:
         self.__playerList = players
 
     def displayScoreBoard(self):
-        print("="*59)
-        print("-", (format("Player Summary", "^55s")), "-")
-        print("="*59)
-        print("-", format("P", ">29s"), format("W", ">2s"), format("L", ">2s"), format("D", ">2s"), format("Chips", ">7s"), format("Score", ">7s"), format("-", ">2s"))
-        print("-"*59)
+        '''Displays the players results and game stats'''
+       
+        print("="*35)
+        print(format("Name", ""), format("Played", ">20s"), format("Won", ">2s"), format("Chips", ">2s"))
+        print("="*35)
         
 
         # Using for loop to display player stats.
         for player in self.__playerList:
-            print(format("-", "<2s"), format(player.getName(), "<25s"), format(str(player.getChipBalance()), ">2s"), format(str(player.getNumberOfGamesPlayed()), ">2s"), format(str(player.getNumberOfGamesWon()), ">2s"))
-            print("-"*59)
+            print(format(player.getName(), "<18s"), format(str(player.getNumberOfGamesPlayed()), "<2s"), format(str(player.getNumberOfGamesWon()) , ">5s"), format(str(player.getChipBalance()), ">5s"))
+            
 
-        print("="*59)
+        print("="*35)
     
 
 

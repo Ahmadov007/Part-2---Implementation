@@ -1,3 +1,16 @@
+#
+# File: validation.py
+# Descrition: The validation.py file contains the Validation class, 
+# which is used to validate and contain methods that can help find players 
+# in a list.  
+# Author: Ahmad Mohammadi
+# Student ID: 110120185
+# Email ID: mohaf002@mymail.unisa.edu.au
+# This is my own work as defined by
+# the University's Academic Misconduct Policy.
+# 
+
+
 class Validation:
     """This class contains methods to validate our code"""
     
@@ -17,7 +30,7 @@ class Validation:
         return isFound
     
     def getPlayer(self, name, playerList):
-      
+        '''Used to return a player object given a name and a list'''
         if len(playerList) == 0:
             print("Player does not exist (empty list).")
         else:
@@ -27,6 +40,7 @@ class Validation:
                 
     
     def returnPlayerIndex(self, name, playerList):
+        '''Returns an index of the name found in the playerList'''
 
         index = 0
         count = 0

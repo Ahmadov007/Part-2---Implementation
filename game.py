@@ -1,9 +1,11 @@
 #
-# File: filename.py
-# Descrition: A brief description of this Python module.
-# Author: Steve Jobs
-# Student ID: 12345678
-# Email ID: jobst007
+# File: game.py
+# Descrition: The game.py file contains the game class as well its child classes.
+# Each child class runs a specific game for example the OddOrEven() class is used to run
+# the Odd or even game, the Maxi class is used to run the maxi game etc.  
+# Author: Ahmad Mohammadi
+# Student ID: 110120185
+# Email ID: mohaf002@mymail.unisa.edu.au
 # This is my own work as defined by
 # the University's Academic Misconduct Policy.
 # 
@@ -11,6 +13,7 @@ from validation import *
 import random
 
 class Game:
+    '''Is used as a parent class for all the games'''
     def __init__(self, name, maxPlayer, minPlayer, playerList):
         self.__name = name
         self.__maximumPLayer = maxPlayer
@@ -18,13 +21,9 @@ class Game:
         self.__playerList = playerList
         self.__InGamePlayers = []
 
-    def findPLayer(self, name):
-        pass
-    
-    def chipBid(self):
-        pass
 
     def shiftTheValue(self, shiftValue, randomNumberValue):
+        '''Calculates the shift value'''
         sumOfValue = shiftValue+randomNumberValue
         resultValue = 0
         if sumOfValue > 6:
@@ -35,25 +34,34 @@ class Game:
         return resultValue
 
     def play(self):
+        '''Runs the game'''
         pass
 
     def getPlayerList(self):
+        '''Returns the playerList'''
         return self.__playerList
 
     def setPlayerList(self, newList):
+        '''Sets a newList to the playerList attribute'''
         self.__playerList = newList
 
     def appendToInGameList(self, thePlayer):
+        '''appends a player to the self.__InGamePlayers list'''
         self.__InGamePlayers.append(thePlayer)
 
     def getInGamePlayerList(self):
+        '''Returns the self.__InGamePlayers List'''
         return self.__InGamePlayers
 
 class OddOrEven(Game):
+    '''This class inherits from game. It is used to run the
+       Odd or even game.
+    '''
     def __init__(self, playerList):
         super().__init__("Odd Or Even", 1, 1, playerList)
     
     def play(self):
+        '''Starts the Odd and even game'''
         updatedList = self.getPlayerList()
         randomNumber = random.randint(1, 6)
         validation = Validation()
@@ -133,10 +141,12 @@ class OddOrEven(Game):
 
 
 class Maxi(Game):
+    '''This class Inherits from Game. It is used to run the Maxi game.'''
     def __init__(self, playerList):
         super().__init__("Maxi", 5, 3, playerList)
 
     def removePlayer(self, theIndex, playerList):
+        '''Removes a player from a list given an index and a list'''
         newList = []
         del playerList[theIndex]
 
@@ -146,7 +156,7 @@ class Maxi(Game):
         return newList
 
     def returnIndexOfHighestValue(self, playerList):
-
+        '''Returns the index of the player with the highest face up value'''
         highestValue = 0
         index = 0
         count = 0 
@@ -158,6 +168,7 @@ class Maxi(Game):
         return index
     
     def returnIndexOfLowestValue(self, playerList):
+        '''Given a playerList, returns the lowest face up value'''
         lowestValue = playerList[0].getMaxValue()
         index = 0
         count = 0 
@@ -168,33 +179,12 @@ class Maxi(Game):
         
         return index
            
-    def returnHighestFaceUpValue(self, playerList):
-        highestValue = 0
-        playerName = ""
-        index = -1
-        # For loop to compare players chip value and display the highest chip holder.    
-        for player in playerList:
-            if player.getMaxValue() > highestValue:
-               highestValue = player.getMaxValue()
-               playerName = player.getName()
-               
-        print("Highest Chip Holder =>", playerName, " with", str(highestValue), "face up value!")
-        print()
-        return highestValue
+    
 
-    def returnLowestFaceUpValue(self, playerList):
-        lowestValue = 10000
-        playerName = ""
-
-        for player in playerList:
-            if player.getMaxValue() < lowestValue:
-                lowestValue = player.getMaxValue()
-                playerName = player.getName()
-        print("Lowest Face Up Value =>", playerName, " with", str(lowestValue), "face up value!")
-        return lowestValue
 
         
     def play(self):
+        '''Starts the Maxi game. '''
         print("Let’s play the game of Maxi!")
         playerCount = int(input("How many players (3-5)?\n> "))
 
@@ -217,6 +207,7 @@ class Maxi(Game):
 
         print("Let the game begin!")
         
+        #Contains the list that will be updated to the getPlayerList()
         updatedList = self.getPlayerList()
 
         isPlaying = True
@@ -301,32 +292,20 @@ class Maxi(Game):
             if(len(self.getInGamePlayerList()) == 1):
                 for i in self.getInGamePlayerList():
                     print("Congratulations, " + i.getName() + "! You win!")
+                    i.incrementChipBalance(i.getBid())
                 isPlaying = False
             else:
                 print(remaining)
 
             
             
-               
-               
-   
-                            
-                
-
-           
-          
-            
-        
-            
-
-
-       
-
 class Bunco(Game):
+    '''This class inherits from Game class and is used to run the Bunco Game.'''
     def __init__(self, playerList):
         super().__init__("Bunco", 4, 2, playerList)
     
     def play(self):
+        '''Starts the Bunco Game'''
         pass
       
 
